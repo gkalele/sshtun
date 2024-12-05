@@ -1,4 +1,4 @@
-module github.com/rgzr/sshtun
+module github.com/gkalele/sshtun
 
 go 1.22
 
