@@ -37,6 +37,8 @@ type SSHTun struct {
 	sshConfigKeyExchanges []string
 	sshConfigCiphers      []string
 	sshConfigMACs         []string
+
+	name string
 }
 
 // ForwardType is the type of port forwarding.
@@ -429,4 +431,12 @@ func (tun *SSHTun) removeConn() {
 		tun.sshClient.Close()
 		tun.sshClient = nil
 	}
+}
+
+func (tun *SSHTun) SetName(name string) {
+	tun.name = name
+}
+
+func (tun *SSHTun) Name() string {
+	return tun.name
 }
